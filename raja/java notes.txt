@@ -1,0 +1,450 @@
+Compile the program
+To single source file
+Ex:- Javac filename.java
+Javac Test.java
+
+
+Object Oriented:-
+ Java is object oriented technology because to represent total data in the form of object. By using object reference we are calling all the methods, variables which is present in that class
+Class Test
+{Class data; 
+}
+Test t=new Test();
+
+The total java language is dependent on object only hence we can say java is a object
+oriented technology.
+
+Class
+It Contains Five elements:- 
+Class Test {
+ 1. variables 
+2. methods 
+3. constructors 
+4. instance blocks 
+5. static blocks
+ }
+TOKENS
+Smallest individual part in a java program is called Token. It is possible to provide any number of spaces in between two tokens. 
+Ex:-Class Test 
+{ Public static void main(String[] args) { 
+int a=10;
+ System.out.println(“java tokens”);
+ }
+ } 
+Tokens are:
+class,test,{,”,[-----------------------------etc
+
+Print() vs Println ():- 
+Print():- Print is used to print the statement into the console and the control is available in the same line. Ex:-
+ System.out.print(“Hello”); 
+System.out.print(“World”);
+ Output:-HelloWorld
+ Println():- In the println statement Print is used to print the statement into the console and ln represent go to the new line now the control is available in the next line. 
+Ex:- 
+System.out.println(“Hello”); 
+System.out.println(“World”);
+Output: - 
+Hello
+World
+
+
+Class & Object:- 
+•	Class is a group of objects that have common property. 
+•	Java is classes based based language we are able to design the program by using classes and objects. 
+•	Object is a realworld entity. Object orientation is methodology to design a program by using classes and objects. 
+•	Object is physical entity where as class is a logical entity. 
+•	A class is a template or blue print from which type of objects are created. • Object is nothing but instance of a class.
+
+Test t = new Test() ;
+Test t; 
+a. It notifies the compiler refers the Test data with t reference variable. b. Declaring reference variable doesn’t mean creating object we must use new operator to create object. t is reference variable pointing to nothing.
+Test t=new Test(); 
+a. The new operator instantiating class by allocating memory for new object and the reference variable pointing to that object.
+Test t=new Test(100,200); 
+Constructors are executed as part of the object creation. If we want perform any type of initializations at the time of object creation use constructors. 
+class Test { int x; int j;
+ //constructor 
+Test(int a,int b)
+ {
+ x=a;
+ y=b; 
+}
+ public static void main(String[] args) {
+ Test t=new Test(100,200);
+ } };
+
+Methods (behaviors):- 
+1) Methods are used to provide the business logic of the project. 
+2) The methods like a functions in C-language called functions, in java language is called methods. 
+3) Inside the class it is possible to declare any number of methods based on the developer requirement. 
+4) As a software developer while writing method we have to fallow the coding standards like the method name starts with lower case letters if the method contains two words every inner word also starts uppercase letter. 
+5) It will improve the reusability of the code. By using methods we can optimize the code. 
+Syntax:- [modifiers-list] return-Type Method-name (parameter-list)throws Exception
+Ex:- 
+Public void m1() 
+Public void m2(int a,int b)
+
+
+
+Methods:
+Method describe behavior of an object. A method is a collection of statements that are group together to perform an operation.
+Syntax
+return-type methodName(parameter-list)
+{
+ //body of method
+}
+
+Constructors 
+A constructor is a special method that is used to initialize an object. Every class has a constructor,if we don't explicitly declare a constructor for any java class the compiler builds a default constructor for that class. A constructor does not have any return type.
+A constructor has same name as the class in which it resides. Constructor in Java can not be abstract, static, final or synchronized. These modifiers are not allowed for constructor.
+
+class Car
+{
+ String name ;
+ String model;
+ Car( )    //Constructor 
+ {
+  name ="";
+  model="";
+ }
+}		
+
+Example of constructor overloading
+
+class Cricketer 
+{
+ String name;
+ String team;
+ int age;
+ Cricketer ()   //default constructor.
+ {
+  name ="";
+  team ="";
+  age = 0;
+ }
+ Cricketer(String n, String t, int a)   //constructor overloaded
+ {
+  name = n;
+  team = t;
+  age = a;
+ }
+ Cricketer (Cricketer ckt)     //constructor similar to copy constructor of c++ 
+ {
+  name = ckt.name;
+  team = ckt.team;
+  age = ckt.age;
+ }
+ public String toString() 
+ {
+  return "this is " + name + " of "+team;
+ }
+}
+
+Class test:
+{
+ public static void main (String[] args)
+ {
+  Cricketer c1 = new Cricketer();
+  Cricketer c2 = new Cricketer("sachin", "India", 32);
+  Cricketer c3 = new Cricketer(c2 );
+  System.out.println(c2);
+  System.out.println(c3);
+  c1.name = "Virat";
+  c1.team= "India";
+  c1.age = 32;
+  System .out. print in (c1);
+ }
+}
+output:
+this is sachin of india
+this is sachin of india
+this is virat of india
+Constructors must have the same name as the class and can not return a value. They are only called once while regular methods could be called many times and it can return a value or can be void.
+
+this keyword
+this keyword is used to refer to current object.
+this is always a reference to the object on which method was invoked.
+this can be used to invoke current class constructor.
+this can be passed as an argument to another method.
+Example :
+class Box
+ {
+  Double width, weight, dept; 
+  Box (double w, double h, double d)
+  {
+   this.width = w;
+   this.height = h;
+   this.depth = d;
+  }
+}
+Here the this is used to initialize member of current object.
+
+Access control modifier
+Java language has four access modifier to control access levels for classes, variable methods and constructor.
+Default : Default has scope only inside the same package
+Public : Public scope is visible everywhere
+Protected : Protected has scope within the package and all sub classes
+Private : Private has scope only within the classes
+
+Inheritance
+Inheritance is one of the key features of Object Oriented Programming. Inheritance provided mechanism that allowed a class to inherit property of another class. When a Class extends another class it inherits all non-private members including fields and methods. Inheritance in Java can be best understood in terms of Parent and Child relationship, also known as Super class(Parent) and Sub class(child) in Java language.
+
+Inheritance defines is-a relationship between a Super class and its Sub class. extends and implements keywords are used to describe inheritance in Java.
+
+class Vehicle. 
+{ ......  
+}
+class Car extends Vehicle 
+{
+ .......   //extends the property of vehicle class.
+}
+Now based on above example
+Vehicle is super class of Car.
+Car is sub class of Vehicle.
+Car IS-A Vehicle.
+
+Purpose of Inheritance:
+To promote code reuse.
+To use Polymorphism.
+
+example of Inheritance
+
+class Parent
+{
+    public void p1()
+    {
+        System.out.println("Parent method");
+    }
+}
+public class Child extends Parent {
+    public void c1()
+    {
+        System.out.println("Child method");
+    }
+    public static void main(String[] args)
+    {
+        Child cobj = new Child();
+        cobj.c1();   //method of Child class
+        cobj.p1();   //method of Parent class 
+    }
+}
+Output :
+Child method
+Parent method
+
+
+Method Overriding
+When a method in a sub class has same name and type signature as a method in its super class, then the method is known as overridden method. Method overriding is also referred to as runtime polymorphism. The key benefit of overriding is the abitility to define method that's specific to a particular subclass type.
+
+Example of Method Overriding
+class Animal
+{
+ public void eat()
+ {
+  System.out.println("Generic Animal eating");
+ }
+}
+
+class Dog extends Animal
+{
+ public void eat()   //eat() method overriden by Dog class.
+ {
+  System.out.println("Dog eat meat");
+ }
+}
+As you can see here Dog class gives it own implementation of eat() method. Method must have same name and same type signature.
+NOTE : Static methods cannot be overridden because, a static method is bounded with class where as instance method is bounded with object.
+
+Abstract class
+If a class contain any abstract method then the class is declared as abstract class. An abstract class is never instantiated. It is used to provide abstraction. Although it does not provide 100% abstraction because it can also have concrete method.
+
+Syntax :
+abstract class class_name { }
+Abstract method
+
+Method that are declared without any body within an abstract class are called abstract method. The method body will be defined by its subclass. Abstract method can never be final and static. Any class that extends an abstract class must implement all the abstract methods declared by the super class.
+
+Syntax :
+
+abstract return_type function_name ();    // No definition
+
+Example of Abstract class
+abstract class A
+{
+ abstract void callme(); 
+}
+class B extends A
+{
+ void callme()
+ {
+  System.out.println("this is callme."); 
+ }
+ public static void main(String[] args)
+ {
+  B b = new B();
+  b.callme();
+ }
+}
+Output :
+this is callme.
+
+Abstract classes are not Interfaces. They are different, we will study this when we will study Interfaces.
+An abstract class may or may not have an abstract method. But if any class has even a single abstract method, then it must be declared abstract.
+Abstract classes can have Constructors, Member variables and Normal methods.
+Abstract classes are never instantiated.
+When you extend Abstract class with abstract method, you must define the abstract method in the child class, or make the child class abstract.
+
+Abstraction using abstract class
+Abstraction is an important feature of OOPS. It means hiding complexity. Abstract class is used to provide abstraction. Although it does not provide 100% abstraction because it can also have concrete method. Lets see how abstract class is used to provide abstraction.
+
+abstract class Vehicle
+{
+   public abstract void engine();  
+}
+public class Car extends Vehicle {
+    
+    public void engine()
+    {
+        System.out.println("Car engine");   
+        //car engine implementation
+    }
+    
+    public static void main(String[] args)
+    {
+        Vehicle v = new Car();
+        v.engine();
+    }
+}
+Output :
+Car engine
+
+Interface
+Interface is a pure abstract class.They are syntactically similar to classes, but you cannot create instance of an Interface and their methods are declared without any body. Interface is used to achieve complete abstraction in Java. When you create an interface it defines what a class can do without saying anything about how the class will do it.
+
+Syntax :
+interface interface_name { }
+Example of Interface
+interface Moveable 
+{ 
+ int AVERAGE-SPEED=40;
+ void move();
+}
+
+NOTE : Compiler automatically converts methods of Interface as public and abstract, and the data members as public, static and final by default.
+
+Rules for using Interface
+Methods inside Interface must not be static, final, native or strictfp.
+All variables declared inside interface are implicitly public static final variables(constants).
+All methods declared inside Java Interfaces are implicitly public and abstract, even if you don't use public or abstract keyword.
+Interface can extend one or more other interface.
+Interface cannot implement a class.
+Interface can be nested inside another interface.
+
+Example of Interface implementation
+interface Moveable 
+{
+ int AVG-SPEED = 40;
+ void move();
+}
+
+class Vehicle implements Moveable 
+{
+ public void move()
+ {
+  System .out. print in ("Average speed is"+AVG-SPEED");
+ }
+ public static void main (String[] arg)
+ {
+  Vehicle vc = new Vehicle();
+  vc.move();
+ }
+}
+Output :
+Average speed is 40.
+
+Exception Handling
+Exception Handling is the mechanism to handle runtime malfunctions. We need to handle such exceptions to prevent abrupt termination of program. The term exception means exceptional condition, it is a problem that may arise during the execution of program. A bunch of things can lead to exceptions, including programmer error, hardware failures, files that need to be opened cannot be found, resource exhaustion etc.
+
+Exception
+A Java Exception is an object that describes the exception that occurs in a program. When an exceptional events occurs in java, an exception is said to be thrown. The code that's responsible for doing something about the exception is called an exception handler.
+
+Checked Exception
+The exception that can be predicted by the programmer.Example : File that need to be opened is not found. These type of exceptions must be checked at compile time.
+
+Unchecked Exception
+Unchecked exceptions are the class that extends RuntimeException. Unchecked exception are ignored at compile time. Example : ArithmeticException, NullPointerException, Array Index out of Bound exception. Unchecked exceptions are checked at runtime.
+
+Exception Handling Mechanism
+In java, exception handling is done using five keywords,
+try
+catch
+throw
+throws
+finally
+
+Exception handling is done by transferring the execution of a program to an appropriate exception handler when exception occurs.
+
+Using try and catch
+Try is used to guard a block of code in which exception may occur. This block of code is called guarded region. A catch statement involves declaring the type of exception you are trying to catch. If an exception occurs in guarded code, the catch block that follows the try is checked, if the type of exception that occured is listed in the catch block then the exception is handed over to the catch block which then handles it.
+
+Example using Try and catch
+class Excp
+{
+ public static void main(String args[])
+ {
+  int a,b,c;
+  try
+  {
+   a=0;
+   b=10;
+   c=b/a;
+   System.out.println("This line will not be executed");
+  }
+  catch(ArithmeticException e)
+  {
+   System.out.println("Divided by zero"); 
+  }
+  System.out.println("After exception is handled");
+ }
+}
+Output :
+Divided by zero
+After exception is handled
+
+
+throw Keyword
+throw keyword is used to throw an exception explicitly. Only object of Throwable class or its sub classes can be thrown. Program execution stops on encountering throw statement, and the closest catch statement is checked for matching type of exception.
+
+Syntax :
+throw ThrowableInstance
+
+
+Creating Instance of Throwable class
+There are two possible ways to get an instance of class Throwable, 
+Using a parameter in catch block.
+Creating instance with new operator.
+new NullPointerException("test");
+
+This constructs an instance of NullPointerException with name test.
+
+Example demonstrating throw Keyword
+
+class Test
+{
+ static void avg() 
+ {
+  try
+  {
+   throw new ArithmeticException("demo");
+  }
+  catch(ArithmeticException e)
+  {
+   System.out.println("Exception caught");
+  } 
+ }
+
+ public static void main(String args[])
+ {
+  avg(); 
+ }
+}
