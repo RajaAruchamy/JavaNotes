@@ -1,0 +1,60 @@
+IO Stream
+Java performs I/O through Streams. A Stream is linked to a physical layer by java I/O system to make input and output operation in java. In general, a stream means continuous flow of data. Streams are clean way to deal with input/output without having every part of your code understand the physical.
+
+Java encapsulates Stream under java.io package. Java defines two types of streams. They are,
+
+1. Byte Stream : It provides a convenient means for handling input and output of byte.
+2. Character Stream : It provides a convenient means for handling input and output of characters. Character stream uses Unicode and therefore can be internationalized.
+
+
+Note: Closing a stream when it's no longer needed is very important — so important that CopyBytes uses a finally block to guarantee that both streams will be closed even if an error occurs. This practice helps avoid serious resource leaks.
+
+
+STREAM CLASS			DESCRIPTION
+BufferedInputStream		Used for Buffered Input Stream.
+BufferedOutputStream	Used for Buffered Output Stream.
+DataInputStream			Contains method for reading java standard datatype
+DataOutputStream		An output stream that contain method for writing java standard data type
+FileInputStream			Input stream that reads from a file
+FileOutputStream		Output stream that write to a file.
+InputStream				Abstract class that describe stream input.
+OutputStream			Abstract class that describe stream output.
+PrintStream				Output Stream that contain print() and println() method
+
+InputStream:-
+MODIFIER AND TYPE	METHOD AND DESCRIPTION
+int					available() 	Returns an estimate of the number of bytes that can be read (or skipped over) from this input stream without blocking by the next invocation of a method for this input stream.
+void				close() 		Closes this input stream and releases any system resources associated with the stream.
+void				mark(int readlimit) Marks the current position in this input stream.
+boolean				markSupported() 	Tests if this input stream supports the mark and reset methods.
+abstract int		read() 		Reads the next byte of data from the input stream.
+int					read(byte[] b) 		Reads some number of bytes from the input stream and stores them into the buffer array b.
+int					read(byte[] b, int off, int len) 	Reads up to len bytes of data from the input stream into an array of bytes.
+void				reset() 	Repositions this stream to the position at the time the mark method was last called on this input stream.
+long				skip(long n) 	Skips over and discards n bytes of data from this input stream.
+
+OutStream:-
+MODIFIER AND TYPE	METHOD AND DESCRIPTION
+void				close() Closes this output stream and releases any system resources associated with this stream.
+void				flush() Flushes this output stream and forces any buffered output bytes to be written out.
+void				write(byte[] b)  Writes b.length bytes from the specified byte array to this output stream.
+void				write(byte[] b, int off, int len)  Writes len bytes from the specified byte array starting at offset off to this output stream.
+abstract void		write(int b)  Writes the specified byte to this output stream.
+
+
+
+CHARACTER STREAM:
+
+It provides a convenient means for handling input and output of characters. Character stream uses Unicode and therefore can be internationalized.
+Character stream is also defined by using two abstract class at the top of hierarchy, they are Reader and Writer.
+
+Chracter Stream uses FileReader and FileWriter for input and output. 
+Byte Stream Useds FileInputStream and FileOutputStream for input and output.
+
+On Character Stream ,The variable to read and write holds a character value in its last 16 bits.
+On Byte Stream , The Variable to read and write holds a byte value in its last 8 bits.
+
+
+
+Character I/O usually occurs in bigger units than single characters
+
